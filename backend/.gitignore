@@ -1,6 +1,25 @@
+# Dependências
 node_modules/
+
+# Variáveis de ambiente (CONTÉM CHAVE PRIVADA!)
 .env
-dist/
-coverage/
-.idea/
+
+# Firebase Service Account (CONTÉM CHAVE PRIVADA!)
+firebase-service-account.json
+*-service-account.json
+
+# Agent Skills (Firebase CLI gerou)
+.agents/
+.claude/
+skills-lock.json
+
+# Logs
+npm-debug.log*
 *.log
+
+# IDE
+.vscode/
+.idea/
+
+# Firebase
+.firebase/
