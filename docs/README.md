@@ -9,10 +9,12 @@
 ## 📂 Índice
 
 ### 📦 Produto
+
 - [Visão do Produto e MVP](./produto/visao-e-mvp.md) - O que é, escopo, critérios de sucesso
 - [Roadmap](./produto/roadmap.md) - Visão de longo prazo e próximas versões
 
 ### 🏃 Scrum
+
 - [Product Backlog](./scrum/product-backlog.md) - Todas as histórias priorizadas
 - [Sprint 0](./scrum/sprint-0.md) - Setup & Fundação
 - [Sprint 1](./scrum/sprint-1.md) - Painel Administrativo
@@ -21,11 +23,14 @@
 - [Sprint 4](./scrum/sprint-4.md) - Polimento e Validação
 
 ### ⚙️ Técnico
+
 - [Stack e Arquitetura](./tecnico/stack-e-arquitetura.md) - Tecnologias, estrutura de pastas, padrões
 - [Banco de Dados](./tecnico/banco-de-dados.md) - Modelagem, coleções, relacionamentos
 - [Segurança e Performance](./tecnico/seguranca-e-perf.md) - Auth, RBAC, metas de performance
+- [Schemas](./tecnico/schemas.md) - Estrutura das coleções no Firestore
 
 ### 🎯 Funcionalidades
+
 - [Autenticação e Permissões](./funcionalidades/autenticacao.md) - Login, papéis, endpoints
 - [Perfil do Usuário](./funcionalidades/perfil-usuario.md) - Perfil global, bio, feed pessoal
 - [Igreja e Página Pública](./funcionalidades/igreja-e-pagina-publica.md) - Configurações, feed público
@@ -35,7 +40,8 @@
 ---
 
 ## 🗺️ Mapa da Documentação
-````
+
+```
 docs/
 ├── README.md ← Você está aqui
 │
@@ -63,7 +69,7 @@ docs/
 ├── posts-e-conteudo.md
 └── eventos-e-inscricoes.md
 
-````
+```
 
 ---
 
