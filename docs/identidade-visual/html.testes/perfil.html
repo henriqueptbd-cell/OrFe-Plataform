@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrFe — Perfil de João Silva</title>
+    <!-- Tailwind CSS para fidelidade total ao protótipo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#FFFDFB] text-[#1A1A1A] min-h-screen pb-16">
+
+    <!-- Imagem de Capa do Perfil (Estilo bokeh/natureza do Figma) -->
+    <div class="relative h-48 md:h-64 w-full bg-purple-900">
+        <img src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&w=1200&q=80"
+            alt="Capa do Perfil" class="w-full h-full object-cover opacity-60">
+    </div>
+
+    <!-- Conteúdo Principal do Perfil -->
+    <main class="max-w-4xl mx-auto px-6">
+
+        <!-- Bloco de Identidade do Usuário (Avatar Redondo + Info + Botão Editar) -->
+        <div class="relative flex flex-col sm:flex-row sm:items-end justify-between gap-4 -mt-12 mb-6">
+            <div class="flex flex-col sm:flex-row items-start sm:items-end gap-4">
+                <!-- Avatar Laranja Circular com Borda Branca Grossa -->
+                <div
+                    class="w-24 h-24 bg-[#FF6B35] text-white font-extrabold text-3xl flex items-center justify-center rounded-full shadow-md border-4 border-white shrink-0">
+                    JS
+                </div>
+                <!-- Nome e e-mail -->
+                <div class="space-y-0.5 pt-2 sm:pt-0">
+                    <h1 class="text-2xl md:text-3xl font-extrabold text-[#1A1A1A] tracking-tight">
+                        João Silva
+                    </h1>
+                    <p class="text-sm text-gray-400 font-medium">joao.silva@email.com</p>
+                </div>
+            </div>
+
+            <!-- Botão Editar Perfil -->
+            <button
+                class="border border-gray-200 bg-white hover:bg-gray-50 text-gray-700 px-5 py-2.5 rounded-xl font-bold text-sm flex items-center gap-2 transition shadow-sm self-start sm:self-end">
+                <span>✏️</span> Editar
+            </button>
+        </div>
+
+        <!-- Biografia do Usuário -->
+        <p class="text-gray-600 leading-relaxed text-sm md:text-base max-w-2xl mb-8">
+            Líder de jovens e músico. Apaixonado por servir através da música e do ensino bíblico. Membro ativo há 2
+            anos.
+        </p>
+
+        <!-- Grade de Estatísticas / Contadores (3 Cards Principais) -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+            <!-- Card 1 -->
+            <div class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm text-center space-y-1">
+                <span class="block text-3xl font-extrabold text-[#1A1A1A]">14</span>
+                <span class="block text-xs font-semibold text-gray-400">Eventos participados</span>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm text-center space-y-1">
+                <span class="block text-3xl font-extrabold text-[#1A1A1A]">3</span>
+                <span class="block text-xs font-semibold text-gray-400">Igrejas que segue</span>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm text-center space-y-1">
+                <span class="block text-3xl font-extrabold text-[#1A1A1A]">67</span>
+                <span class="block text-xs font-semibold text-gray-400">Curtidas dadas</span>
+            </div>
+        </div>
+
+        <!-- Duas Colunas Inferiores (Conquistas e Minhas Igrejas) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Coluna: Conquistas -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold text-[#1A1A1A] flex items-center gap-2">
+                    <span>🏅</span> Conquistas
+                </h3>
+
+                <!-- Box de Conquistas Cadastradas -->
+                <div class="bg-white p-5 rounded-[2rem] border border-gray-100 shadow-sm space-y-4">
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center text-xl shrink-0">
+                            🎉
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-900">Primeiros Passos</h4>
+                            <p class="text-xs text-gray-400">Completou o perfil e seguiu a primeira igreja.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-purple-50 flex items-center justify-center text-xl shrink-0">
+                            🎵
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-900">Engajamento Musical</h4>
+                            <p class="text-xs text-gray-400">Participou de mais de 5 eventos de louvor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna: Minhas Igrejas -->
+            <div class="space-y-4">
+                <h3 class="text-lg font-bold text-[#1A1A1A] flex items-center gap-2">
+                    <span>⛪</span> Minhas Igrejas
+                </h3>
+
+                <!-- Card de Igreja Vinculada -->
+                <div
+                    class="bg-white p-4 rounded-[2rem] border border-gray-100 shadow-sm flex items-center justify-between group hover:shadow-md transition">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-12 h-12 rounded-2xl bg-[#FF6B35] text-white font-black text-xl flex items-center justify-center shrink-0">
+                            G
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-900 group-hover:text-[#FF6B35] transition">Igreja
+                                Graça e Paz</h4>
+                            <p class="text-xs text-gray-400">Membro Oficial</p>
+                        </div>
+                    </div>
+                    <span class="text-gray-300 text-sm font-bold pr-2 group-hover:text-[#FF6B35] transition">➔</span>
+                </div>
+            </div>
+
+            <!-- Seção Inferior: Atividade Recente -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+                <!-- Card de Atividade Recente -->
+                <section class="lg:col-span-8 bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm space-y-6">
+                    <h2 class="text-xl font-extrabold text-gray-900 tracking-tight">
+                        Atividade recente
+                    </h2>
+
+                    <!-- Lista de Atividades -->
+                    <div class="space-y-6">
+
+                        <!-- Item 1: Inscrição -->
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-9 h-9 rounded-xl bg-orange-50 text-orange-500 flex items-center justify-center text-sm shrink-0">
+                                📅
+                            </div>
+                            <div class="space-y-0.5">
+                                <p class="text-sm font-medium text-gray-800">
+                                    Inscreveu-se em <span class="font-bold">Retiro Espiritual de Verão</span>
+                                </p>
+                                <span class="block text-xs text-gray-400">2h atrás</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: Curtida -->
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-9 h-9 rounded-xl bg-red-50 text-red-500 flex items-center justify-center text-sm shrink-0">
+                                ❤️
+                            </div>
+                            <div class="space-y-0.5">
+                                <p class="text-sm font-medium text-gray-800">
+                                    Curtiu <span class="font-bold">Noite de Louvor — Geração</span>
+                                </p>
+                                <span class="block text-xs text-gray-400">5h atrás</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: Comentário -->
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-9 h-9 rounded-xl bg-blue-50 text-blue-500 flex items-center justify-center text-sm shrink-0">
+                                💬
+                            </div>
+                            <div class="space-y-0.5">
+                                <p class="text-sm font-medium text-gray-800">
+                                    Comentou em <span class="font-bold">Workshop: Família e Fé</span>
+                                </p>
+                                <span class="block text-xs text-gray-400">1d atrás</span>
+                            </div>
+                        </div>
+
+                        <!-- Item 4: Segunda Inscrição -->
+                        <div class="flex items-start gap-4">
+                            <div
+                                class="w-9 h-9 rounded-xl bg-purple-50 text-purple-500 flex items-center justify-center text-sm shrink-0">
+                                📅
+                            </div>
+                            <div class="space-y-0.5">
+                                <p class="text-sm font-medium text-gray-800">
+                                    Inscreveu-se em <span class="font-bold">Seminário de Liderança</span>
+                                </p>
+                                <span class="block text-xs text-gray-400">2d atrás</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrFe — Explorar Eventos</title>
+    <!-- Tailwind CSS para estilização rápida e idêntica ao protótipo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#FFFDFB] text-[#1A1A1A] min-h-screen pb-28">
+
+    <!-- Header / Navbar Compacta -->
+    <header class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
+        <!-- Esquerda: Seta Voltar e Logo -->
+        <div class="flex items-center gap-4">
+            <button class="text-gray-400 hover:text-gray-600 transition p-1.5 rounded-lg hover:bg-gray-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <div class="flex items-center gap-2 font-bold text-xl">
+                <div class="bg-[#FF6B35] text-white p-2 rounded-xl flex items-center justify-center shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                </div>
+                <span>OrFe</span>
+            </div>
+        </div>
+
+        <!-- Direita: Perfil Avatar -->
+        <div>
+            <div
+                class="w-10 h-10 rounded-full bg-[#FF6B35] text-white flex items-center justify-center font-bold text-sm shadow-sm cursor-pointer hover:opacity-90 transition">
+                JS
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="max-w-6xl mx-auto px-4 pt-4 space-y-8">
+
+        <!-- Título da Página -->
+        <h1 class="text-4xl font-extrabold tracking-tight text-[#1A1A1A]">
+            Explorar Eventos
+        </h1>
+
+        <!-- Barra de Busca e Filtros -->
+        <div class="space-y-4">
+            <div class="flex flex-col sm:flex-row gap-3">
+                <!-- Campo de Input -->
+                <div
+                    class="flex-1 bg-white border border-gray-200 rounded-2xl px-4 py-3.5 flex items-center gap-3 shadow-sm focus-within:border-[#FF6B35] transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <input type="text" placeholder="Buscar eventos ou igrejas..."
+                        class="w-full bg-transparent outline-none text-gray-700 placeholder-gray-400 text-sm">
+                </div>
+                <!-- Botão de Filtros Geral -->
+                <button
+                    class="border border-gray-200 bg-white rounded-2xl px-5 py-3.5 flex items-center justify-center gap-2 font-medium text-sm text-gray-700 shadow-sm hover:bg-gray-50 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
+                    Filtros
+                </button>
+            </div>
+
+            <!-- Tags de Filtros Rápidos (Pills) -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none whitespace-nowrap">
+                <button
+                    class="bg-[#FF6B35] text-white px-5 py-2 rounded-full text-sm font-medium shadow-sm shadow-orange-100">
+                    Todos
+                </button>
+                <button
+                    class="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition">
+                    Esta semana
+                </button>
+                <button
+                    class="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition">
+                    Este mês
+                </button>
+                <button
+                    class="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition">
+                    Igreja Graça e Paz
+                </button>
+                <button
+                    class="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition">
+                    Comunidade Nova Vida
+                </button>
+                <button
+                    class="bg-white border border-gray-200 text-gray-600 px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition">
+                    Igreja Renovar
+                </button>
+            </div>
+        </div>
+
+        <!-- Grid de Eventos -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
+
+            <!-- Card 1: Retiro Espiritual de Verão -->
+            <div
+                class="bg-white rounded-[2rem] overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col group">
+                <div class="relative h-56 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1529070538674-1554f4b25642?auto=format&fit=crop&w=600&q=80"
+                        alt="Retiro Espiritual de Verão" class="w-full h-full object-cover">
+                    <!-- Badge Data -->
+                    <div class="absolute top-4 left-4 bg-white px-3 py-2 rounded-2xl text-center shadow-md">
+                        <span
+                            class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 leading-none">JUL</span>
+                        <span class="block text-2xl font-extrabold text-[#1A1A1A] mt-0.5 leading-none">20</span>
+                    </div>
+                    <!-- Botão Coração Salvar -->
+                    <button
+                        class="absolute top-4 right-4 bg-white p-2.5 rounded-full shadow-md text-gray-400 hover:text-red-500 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#1A1A1A] group-hover:text-[#FF6B35] transition leading-snug">
+                            Retiro Espiritual de Verão</h3>
+                        <div class="mt-2 space-y-1">
+                            <p class="text-sm font-semibold text-[#FF6B35]">Igreja Graça e Paz</p>
+                            <p class="text-xs text-gray-400 flex items-center gap-1">📍 Chácara Betel, Campinas</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-50 text-sm font-medium">
+                        <span class="text-gray-400">👥 47 / 80 vagas</span>
+                        <button
+                            class="bg-gray-100 text-[#1A1A1A] px-5 py-2.5 rounded-xl hover:bg-[#FF6B35] hover:text-white transition">
+                            Participar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Noite de Louvor — Geração -->
+            <div
+                class="bg-white rounded-[2rem] overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col group">
+                <div class="relative h-56 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80"
+                        alt="Noite de Louvor" class="w-full h-full object-cover">
+                    <div class="absolute top-4 left-4 bg-white px-3 py-2 rounded-2xl text-center shadow-md">
+                        <span
+                            class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 leading-none">JUL</span>
+                        <span class="block text-2xl font-extrabold text-[#1A1A1A] mt-0.5 leading-none">27</span>
+                    </div>
+                    <button
+                        class="absolute top-4 right-4 bg-white p-2.5 rounded-full shadow-md text-gray-400 hover:text-red-500 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#1A1A1A] group-hover:text-[#FF6B35] transition leading-snug">
+                            Noite de Louvor — Geração</h3>
+                        <div class="mt-2 space-y-1">
+                            <p class="text-sm font-semibold text-[#FF6B35]">Comunidade Nova Vida</p>
+                            <p class="text-xs text-gray-400 flex items-center gap-1">📍 Av. Paulista, 1500 — SP</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-50 text-sm font-medium">
+                        <span class="text-gray-400">👥 132 / 210 vagas</span>
+                        <button
+                            class="bg-gray-100 text-[#1A1A1A] px-5 py-2.5 rounded-xl hover:bg-[#FF6B35] hover:text-white transition">
+                            Participar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Workshop: Família e Fé -->
+            <div
+                class="bg-white rounded-[2rem] overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col group">
+                <div class="relative h-56 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80"
+                        alt="Workshop" class="w-full h-full object-cover">
+                    <div class="absolute top-4 left-4 bg-white px-3 py-2 rounded-2xl text-center shadow-md">
+                        <span
+                            class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 leading-none">AGO</span>
+                        <span class="block text-2xl font-extrabold text-[#1A1A1A] mt-0.5 leading-none">3</span>
+                    </div>
+                    <button
+                        class="absolute top-4 right-4 bg-white p-2.5 rounded-full shadow-md text-gray-400 hover:text-red-500 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#1A1A1A] group-hover:text-[#FF6B35] transition leading-snug">
+                            Workshop: Família e Fé</h3>
+                        <div class="mt-2 space-y-1">
+                            <p class="text-sm font-semibold text-[#FF6B35]">Igreja Renovar</p>
+                            <p class="text-xs text-gray-400 flex items-center gap-1">📍 Rua das Flores, 230 — SP</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-50 text-sm font-medium">
+                        <span class="text-gray-400">👥 28 / 45 vagas</span>
+                        <button
+                            class="bg-gray-100 text-[#1A1A1A] px-5 py-2.5 rounded-xl hover:bg-[#FF6B35] hover:text-white transition">
+                            Participar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Acampamento Jovem 2026 -->
+            <div
+                class="bg-white rounded-[2rem] overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col group">
+                <div class="relative h-56 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=600&q=80"
+                        alt="Acampamento" class="w-full h-full object-cover">
+                    <div class="absolute top-4 left-4 bg-white px-3 py-2 rounded-2xl text-center shadow-md">
+                        <span
+                            class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 leading-none">AGO</span>
+                        <span class="block text-2xl font-extrabold text-[#1A1A1A] mt-0.5 leading-none">10</span>
+                    </div>
+                    <button
+                        class="absolute top-4 right-4 bg-white p-2.5 rounded-full shadow-md text-gray-400 hover:text-red-500 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#1A1A1A] group-hover:text-[#FF6B35] transition leading-snug">
+                            Acampamento Jovem 2026</h3>
+                        <div class="mt-2 space-y-1">
+                            <p class="text-sm font-semibold text-[#FF6B35]">Comunidade Nova Vida</p>
+                            <p class="text-xs text-gray-400 flex items-center gap-1">📍 Sítio Monte Sião, MG</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-50 text-sm font-medium">
+                        <span class="text-gray-400">👥 89 / 150 vagas</span>
+                        <button
+                            class="bg-gray-100 text-[#1A1A1A] px-5 py-2.5 rounded-xl hover:bg-[#FF6B35] hover:text-white transition">
+                            Participar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5: Seminário de Liderança -->
+            <div
+                class="bg-white rounded-[2rem] overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col group">
+                <div class="relative h-56 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80"
+                        alt="Seminário" class="w-full h-full object-cover">
+                    <div class="absolute top-4 left-4 bg-white px-3 py-2 rounded-2xl text-center shadow-md">
+                        <span
+                            class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 leading-none">AGO</span>
+                        <span class="block text-2xl font-extrabold text-[#1A1A1A] mt-0.5 leading-none">17</span>
+                    </div>
+                    <button
+                        class="absolute top-4 right-4 bg-white p-2.5 rounded-full shadow-md text-gray-400 hover:text-red-500 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#1A1A1A] group-hover:text-[#FF6B35] transition leading-snug">
+                            Seminário de Liderança</h3>
+                        <div class="mt-2 space-y-1">
+                            <p class="text-sm font-semibold text-[#FF6B35]">Igreja Palavra Viva</p>
+                            <p class="text-xs text-gray-400 flex items-center gap-1">📍 Centro de Convenções — SP</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-50 text-sm font-medium">
+                        <span class="text-gray-400">👥 61 / 95 vagas</span>
+                        <button
+                            class="bg-gray-100 text-[#1A1A1A] px-5 py-2.5 rounded-xl hover:bg-[#FF6B35] hover:text-white transition">
+                            Participar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6: Culto de Celebração -->
+            <div
+                class="bg-white rounded-[2rem] overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col group">
+                <div class="relative h-56 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&w=600&q=80"
+                        alt="Culto" class="w-full h-full object-cover">
+                    <div class="absolute top-4 left-4 bg-white px-3 py-2 rounded-2xl text-center shadow-md">
+                        <span
+                            class="block text-[10px] font-bold uppercase tracking-wider text-gray-400 leading-none">AGO</span>
+                        <span class="block text-2xl font-extrabold text-[#1A1A1A] mt-0.5 leading-none">24</span>
+                    </div>
+                    <button
+                        class="absolute top-4 right-4 bg-white p-2.5 rounded-full shadow-md text-gray-400 hover:text-red-500 transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#1A1A1A] group-hover:text-[#FF6B35] transition leading-snug">
+                            Culto de Celebração</h3>
+                        <div class="mt-2 space-y-1">
+                            <p class="text-sm font-semibold text-[#FF6B35]">Igreja Graça e Paz</p>
+                            <p class="text-xs text-gray-400 flex items-center gap-1">📍 Sede Principal — RJ</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-gray-50 text-sm font-medium">
+                        <span class="text-gray-400">👥 44 / 180 vagas</span>
+                        <button
+                            class="bg-gray-100 text-[#1A1A1A] px-5 py-2.5 rounded-xl hover:bg-[#FF6B35] hover:text-white transition">
+                            Participar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Botão Carregar Mais -->
+        <div class="text-center pt-6 pb-12">
+            <button
+                class="border border-gray-200 bg-white text-gray-700 px-8 py-3.5 rounded-2xl font-semibold text-sm hover:bg-gray-50 shadow-sm transition">
+                Carregar mais eventos
+            </button>
+        </div>
+
+    </main>
+
+
+
+</body>
+
+</html>

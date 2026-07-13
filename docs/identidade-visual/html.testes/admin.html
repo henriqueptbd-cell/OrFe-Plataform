@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrFe — Dashboard Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#FFFDFB] text-[#1A1A1A] min-h-screen flex">
+
+    <!-- BARRA LATERAL DE NAVEGAÇÃO (Sidebar Esquerda) -->
+    <aside class="w-64 border-r border-gray-100 min-h-screen p-6 flex flex-col justify-between shrink-0 bg-white">
+        <div class="space-y-8">
+            <!-- Logotipo OrFe -->
+            <div class="flex items-center gap-2 px-2">
+                <div
+                    class="w-8 h-8 bg-[#FF6B35] rounded-xl flex items-center justify-center text-white font-black text-sm shadow-sm">
+                    🔥
+                </div>
+                <span class="text-xl font-extrabold tracking-tight text-[#1A1A1A]">OrFe</span>
+            </div>
+
+            <!-- Identificador da Igreja Ativa (Seletor do Admin) -->
+            <div
+                class="bg-orange-50/50 border border-orange-100/50 p-4 rounded-2xl flex items-center justify-between group cursor-pointer hover:bg-orange-50 transition">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 bg-[#FF6B35] text-white font-black text-lg flex items-center justify-center rounded-xl shrink-0">
+                        G
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-gray-900">Igreja Graça e Paz</h4>
+                        <span
+                            class="text-[10px] font-semibold text-[#FF6B35] tracking-wide uppercase block">Admin</span>
+                    </div>
+                </div>
+                <span class="text-gray-400 text-xs group-hover:text-[#FF6B35] transition">▼</span>
+            </div>
+
+            <!-- Links do Menu -->
+            <nav class="space-y-1">
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-bold bg-orange-50 text-[#FF6B35] shadow-sm shadow-orange-100/30 transition">
+                    <span class="text-base">📊</span> Dashboard
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-800 transition">
+                    <span class="text-base">📅</span> Eventos
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-800 transition">
+                    <span class="text-base">📰</span> Posts
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-800 transition">
+                    <span class="text-base">👥</span> Membros
+                </a>
+                <a href="#"
+                    class="flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-semibold text-gray-500 hover:bg-gray-50 hover:text-gray-800 transition">
+                    <span class="text-base">⚙️</span> Configurações
+                </a>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- PAINEL DE CONTEÚDO PRINCIPAL (Direita) -->
+    <div class="flex-1 flex flex-col">
+
+        <!-- Barra Superior (Header) -->
+        <header
+            class="h-20 border-b border-gray-100 px-8 flex items-center justify-between bg-white/80 backdrop-blur-md">
+            <div></div> <!-- Espaço flex lateral -->
+
+            <!-- Ações do Usuário (Sino de Notificação + Avatar de João Silva) -->
+            <div class="flex items-center gap-4">
+                <button
+                    class="w-10 h-10 rounded-xl hover:bg-gray-50 flex items-center justify-center text-lg text-gray-400 hover:text-gray-600 transition relative">
+                    🔔
+                    <span class="absolute top-2.5 right-3 w-2 h-2 bg-[#FF6B35] rounded-full"></span>
+                </button>
+
+                <!-- Menu Dropdown do Usuário -->
+                <div
+                    class="flex items-center gap-2.5 bg-gray-50/50 pl-2 pr-4 py-1.5 rounded-xl border border-gray-100 cursor-pointer hover:bg-gray-50 transition">
+                    <div
+                        class="w-8 h-8 bg-[#FF6B35] text-white font-extrabold text-xs flex items-center justify-center rounded-lg shadow-sm">
+                        JS
+                    </div>
+                    <span class="text-xs font-bold text-gray-700">João Silva</span>
+                    <span class="text-[10px] text-gray-400">▼</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Corpo do Dashboard -->
+        <main class="flex-1 p-8 space-y-6">
+
+            <!-- Título do Painel -->
+            <div class="space-y-0.5">
+                <h1 class="text-2xl font-extrabold text-[#1A1A1A] tracking-tight">Dashboard</h1>
+                <p class="text-xs font-medium text-gray-400">
+                    Igreja Graça e Paz · visão geral da sua comunidade
+                </p>
+            </div>
+
+            <!-- Grade de Métricas (Grid de 4 Cards Conforme o Figma) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Card 1: Membros -->
+                <div class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm space-y-4">
+                    <!-- Ícone em caixa laranja sutil -->
+                    <div class="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-lg">
+                        👥
+                    </div>
+                    <div class="space-y-1">
+                        <span class="block text-3xl font-black text-[#1A1A1A]">348</span>
+                        <span class="block text-xs font-semibold text-gray-400">Membros</span>
+                        <!-- Indicador de Crescimento em Verde -->
+                        <span
+                            class="inline-block text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full mt-1">
+                            +12 este mês
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Eventos ativos -->
+                <div class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm space-y-4">
+                    <!-- Ícone em caixa azul sutil -->
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-lg">
+                        📅
+                    </div>
+                    <div class="space-y-1">
+                        <span class="block text-3xl font-black text-[#1A1A1A]">7</span>
+                        <span class="block text-xs font-semibold text-gray-400">Eventos ativos</span>
+                        <span
+                            class="inline-block text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full mt-1">
+                            3 esta semana
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Posts publicados -->
+                <div class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm space-y-4">
+                    <!-- Ícone em caixa roxa sutil -->
+                    <div class="w-10 h-10 rounded-xl bg-purple-50 flex items-center justify-center text-lg">
+                        📄
+                    </div>
+                    <div class="space-y-1">
+                        <span class="block text-3xl font-black text-[#1A1A1A]">42</span>
+                        <span class="block text-xs font-semibold text-gray-400">Posts publicados</span>
+                        <span
+                            class="inline-block text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full mt-1">
+                            +4 novos
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Inscrições na semana -->
+                <div class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-sm space-y-4">
+                    <!-- Ícone em caixa verde sutil -->
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-lg">
+                        ⭐
+                    </div>
+                    <div class="space-y-1">
+                        <span class="block text-3xl font-black text-[#1A1A1A]">164</span>
+                        <span class="block text-xs font-semibold text-gray-400">Inscrições na semana</span>
+                        <span
+                            class="inline-block text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full mt-1">
+                            +18% superior
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Seção: Gráfico de Inscrições (Inserir dentro do <main> do Admin) -->
+            <section class="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm space-y-6">
+
+                <!-- Cabeçalho do Gráfico -->
+                <div>
+                    <h2 class="text-xl font-extrabold text-[#1A1A1A] tracking-tight">
+                        Inscrições — últimos 7 dias
+                    </h2>
+                </div>
+
+                <!-- Área do Gráfico (CSS Grid + Flexbox) -->
+                <div class="pt-4 flex gap-4 h-64 relative">
+
+                    <!-- Eixo Y (Valores de Referência) -->
+                    <div
+                        class="flex flex-col justify-between text-right text-xs font-bold text-gray-300 w-6 pb-8 h-full select-none">
+                        <span>60</span>
+                        <span>45</span>
+                        <span>30</span>
+                        <span>15</span>
+                        <span>0</span>
+                    </div>
+
+                    <!-- Linhas de Grade de Fundo Desfocadas/Discretas -->
+                    <div
+                        class="absolute inset-0 left-10 right-0 bottom-8 flex flex-col justify-between pointer-events-none pr-2">
+                        <div class="border-b border-gray-100/70 w-full h-0"></div>
+                        <div class="border-b border-gray-100/70 w-full h-0"></div>
+                        <div class="border-b border-gray-100/70 w-full h-0"></div>
+                        <div class="border-b border-gray-100/70 w-full h-0"></div>
+                        <div class="border-b border-gray-100 w-full h-0"></div>
+                    </div>
+
+                    <!-- Barras do Gráfico (Alinhadas por dia) -->
+                    <div class="flex-1 grid grid-cols-7 gap-3 sm:gap-6 items-end h-full relative z-10 pb-8">
+
+                        <!-- Segunda -->
+                        <div class="flex flex-col items-center gap-2 h-full justify-end group">
+                            <div class="w-full bg-[#FF6B35] rounded-t-lg transition-all duration-300 group-hover:opacity-90 cursor-pointer"
+                                style="height: 25%;"></div>
+                            <span class="absolute bottom-1 text-xs font-semibold text-gray-400">Seg</span>
+                        </div>
+
+                        <!-- Terça -->
+                        <div class="flex flex-col items-center gap-2 h-full justify-end group">
+                            <div class="w-full bg-[#FF6B35] rounded-t-lg transition-all duration-300 group-hover:opacity-90 cursor-pointer"
+                                style="height: 40%;"></div>
+                            <span class="absolute bottom-1 text-xs font-semibold text-gray-400">Ter</span>
+                        </div>
+
+                        <!-- Quarta -->
+                        <div class="flex flex-col items-center gap-2 h-full justify-end group">
+                            <div class="w-full bg-[#FF6B35] rounded-t-lg transition-all duration-300 group-hover:opacity-90 cursor-pointer"
+                                style="height: 15%;"></div>
+                            <span class="absolute bottom-1 text-xs font-semibold text-gray-400">Qua</span>
+                        </div>
+
+                        <!-- Quinta -->
+                        <div class="flex flex-col items-center gap-2 h-full justify-end group">
+                            <div class="w-full bg-[#FF6B35] rounded-t-lg transition-all duration-300 group-hover:opacity-90 cursor-pointer"
+                                style="height: 55%;"></div>
+                            <span class="absolute bottom-1 text-xs font-semibold text-gray-400">Qui</span>
+                        </div>
+
+                        <!-- Sexta -->
+                        <div class="flex flex-col items-center gap-2 h-full justify-end group">
+                            <div class="w-full bg-[#FF6B35] rounded-t-lg transition-all duration-300 group-hover:opacity-90 cursor-pointer"
+                                style="height: 65%;"></div>
+                            <span class="absolute bottom-1 text-xs font-semibold text-gray-400">Sex</span>
+                        </div>
+
+                        <!-- Sábado -->
+                        <div class="flex flex-col items-center gap-2 h-full justify-end group">
+                            <div class="w-full bg-[#FF6B35] rounded-t-lg transition-all duration-300 group-hover:opacity-90 cursor-pointer"
+                                style="height: 80%;"></div>
+                            <span class="absolute bottom-1 text-xs font-semibold text-gray-400">Sáb</span>
+                        </div>
+
+                        <!-- Domingo -->
+                        <div class="flex flex-col items-center gap-2 h-full justify-end group">
+                            <div class="w-full bg-[#FF6B35] rounded-t-lg transition-all duration-300 group-hover:opacity-90 cursor-pointer"
+                                style="height: 48%;"></div>
+                            <span class="absolute bottom-1 text-xs font-semibold text-gray-400">Dom</span>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção: Hierarquia (Inserir dentro do <main> do Admin) -->
+            <section class="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm space-y-8">
+
+                <!-- Cabeçalho da Seção -->
+                <div class="flex items-center gap-2">
+                    <span class="text-lg">👑</span>
+                    <h2 class="text-xl font-extrabold text-[#1A1A1A] tracking-tight">
+                        Hierarquia
+                    </h2>
+                </div>
+
+                <!-- Árvore Organizacional -->
+                <div class="flex flex-col items-center justify-center w-full overflow-x-auto py-4">
+
+                    <!-- Nível 1: Pastor (Topo) -->
+                    <div class="flex flex-col items-center text-center">
+                        <div
+                            class="w-12 h-12 rounded-full bg-[#FF6B35] text-white flex items-center justify-center font-black text-sm shadow-sm border-2 border-white ring-4 ring-orange-100/30">
+                            JS
+                        </div>
+                        <span class="text-sm font-bold text-gray-900 mt-2 block">João</span>
+                        <span class="bg-orange-50 text-[#FF6B35] text-[10px] font-bold px-2 py-0.5 rounded-md mt-1">
+                            Pastor
+                        </span>
+                    </div>
+
+                    <!-- Linha Vertical do Topo para a Divisão -->
+                    <div class="w-0.5 h-8 bg-gray-100"></div>
+
+                    <!-- Linha Horizontal Conectora -->
+                    <div class="w-full max-w-2xl border-t-2 border-gray-100 relative">
+                        <!-- Marcadores verticais discretos nas pontas e meio -->
+                        <div class="absolute top-0 left-0 w-0.5 h-4 bg-gray-100 -translate-y-0"></div>
+                        <div class="absolute top-0 left-1/2 w-0.5 h-4 bg-gray-100 -translate-x-1/2"></div>
+                        <div class="absolute top-0 right-0 w-0.5 h-4 bg-gray-100"></div>
+                    </div>
+
+                    <!-- Nível 2: Líderes Intermediários -->
+                    <div class="grid grid-cols-3 gap-x-8 w-full max-w-3xl pt-4 text-center">
+
+                        <!-- Maria (Líder de Jovens) -->
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-11 h-11 rounded-full bg-blue-500 text-white flex items-center justify-center font-black text-sm shadow-sm">
+                                MS
+                            </div>
+                            <span class="text-xs font-bold text-gray-900 mt-2 block">Maria</span>
+                            <span class="bg-blue-50 text-blue-600 text-[10px] font-bold px-2 py-0.5 rounded-md mt-1">
+                                Líder de Jovens
+                            </span>
+
+                            <!-- Linhas conectoras internas para a base (Equipe da Maria) -->
+                            <div class="w-0.5 h-6 bg-gray-100 mt-2"></div>
+                            <div class="w-24 border-t-2 border-gray-100 relative">
+                                <div class="absolute top-0 left-0 w-0.5 h-3 bg-gray-100"></div>
+                                <div class="absolute top-0 right-0 w-0.5 h-3 bg-gray-100"></div>
+                            </div>
+
+                            <!-- Nível Subjacente (Pedro e Ana) -->
+                            <div class="flex gap-4 pt-3">
+                                <div class="text-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-blue-400 text-white flex items-center justify-center font-bold text-[10px] shadow-xs">
+                                        PL
+                                    </div>
+                                    <span class="text-[10px] font-bold text-gray-700 mt-1 block">Pedro</span>
+                                </div>
+                                <div class="text-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-blue-400 text-white flex items-center justify-center font-bold text-[10px] shadow-xs">
+                                        AC
+                                    </div>
+                                    <span class="text-[10px] font-bold text-gray-700 mt-1 block">Ana</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carlos (Diácono) -->
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-11 h-11 rounded-full bg-purple-600 text-white flex items-center justify-center font-black text-sm shadow-sm">
+                                CS
+                            </div>
+                            <span class="text-xs font-bold text-gray-900 mt-2 block">Carlos</span>
+                            <span
+                                class="bg-purple-50 text-purple-600 text-[10px] font-bold px-2 py-0.5 rounded-md mt-1">
+                                Diácono
+                            </span>
+
+                            <!-- Linhas conectoras internas para a base (Equipe do Carlos) -->
+                            <div class="w-0.5 h-6 bg-gray-100 mt-2"></div>
+                            <div class="w-24 border-t-2 border-gray-100 relative">
+                                <div class="absolute top-0 left-0 w-0.5 h-3 bg-gray-100"></div>
+                                <div class="absolute top-0 right-0 w-0.5 h-3 bg-gray-100"></div>
+                            </div>
+
+                            <!-- Nível Subjacente (Fernanda e Ricardo) -->
+                            <div class="flex gap-4 pt-3">
+                                <div class="text-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-purple-400 text-white flex items-center justify-center font-bold text-[10px] shadow-xs">
+                                        FA
+                                    </div>
+                                    <span class="text-[10px] font-bold text-gray-700 mt-1 block">Fernanda</span>
+                                </div>
+                                <div class="text-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-purple-400 text-white flex items-center justify-center font-bold text-[10px] shadow-xs">
+                                        RN
+                                    </div>
+                                    <span class="text-[10px] font-bold text-gray-700 mt-1 block">Ricardo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lúcia (Secretária) -->
+                        <div class="flex flex-col items-center">
+                            <div
+                                class="w-11 h-11 rounded-full bg-emerald-600 text-white flex items-center justify-center font-black text-sm shadow-sm">
+                                LM
+                            </div>
+                            <span class="text-xs font-bold text-gray-900 mt-2 block">Lúcia</span>
+                            <span
+                                class="bg-emerald-50 text-emerald-600 text-[10px] font-bold px-2 py-0.5 rounded-md mt-1">
+                                Secretária
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Seção: Membros Recentes (Inserir dentro do <main> do Admin) -->
+            <section class="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-sm space-y-6">
+
+                <!-- Cabeçalho da Seção (Título + Busca + Ação) -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <h2 class="text-xl font-extrabold text-[#1A1A1A] tracking-tight">
+                        Membros recentes
+                    </h2>
+
+                    <div class="flex items-center gap-3 w-full sm:w-auto">
+                        <!-- Campo de Busca -->
+                        <div class="relative flex-1 sm:flex-initial">
+                            <input type="text" placeholder="Buscar..."
+                                class="w-full sm:w-64 bg-gray-50/50 border border-gray-100 rounded-2xl pl-4 pr-10 py-2.5 outline-none focus:border-[#FF6B35] text-sm transition">
+                            <span class="absolute right-3.5 top-3 text-gray-400 text-xs pointer-events-none">🔍</span>
+                        </div>
+                        <!-- Botão Convidar -->
+                        <button
+                            class="bg-[#FF6B35] text-white px-5 py-2.5 rounded-2xl font-bold text-sm hover:bg-[#e05a2b] transition shadow-sm shadow-orange-100 shrink-0">
+                            + Convidar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tabela de Membros Responsiva -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr
+                                class="border-b border-gray-50 text-[11px] font-bold text-gray-400 uppercase tracking-wider">
+                                <th class="pb-3 pl-2">Membro</th>
+                                <th class="pb-3">Email</th>
+                                <th class="pb-3">Cargo</th>
+                                <th class="pb-3 text-right pr-4">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-50 text-sm font-medium text-gray-700">
+
+                            <!-- Linha 1: João Silva -->
+                            <tr class="hover:bg-gray-50/50 transition">
+                                <td class="py-4 pl-2 flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-[#FF6B35] text-white flex items-center justify-center font-extrabold text-xs shrink-0">
+                                        JS
+                                    </div>
+                                    <span class="font-bold text-gray-900">João Silva</span>
+                                </td>
+                                <td class="py-4 text-gray-400 font-normal">joao@email.com</td>
+                                <td class="py-4">
+                                    <span
+                                        class="bg-orange-50 text-[#FF6B35] text-[11px] font-bold px-2.5 py-1 rounded-full">
+                                        Pastor
+                                    </span>
+                                </td>
+                                <td class="py-4 text-right pr-4 space-x-4 text-xs font-bold">
+                                    <button class="text-blue-600 hover:underline">Promover</button>
+                                    <button class="text-red-500 hover:underline">Remover</button>
+                                </td>
+                            </tr>
+
+                            <!-- Linha 2: Maria Santos -->
+                            <tr class="hover:bg-gray-50/50 transition">
+                                <td class="py-4 pl-2 flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-extrabold text-xs shrink-0">
+                                        MS
+                                    </div>
+                                    <span class="font-bold text-gray-900">Maria Santos</span>
+                                </td>
+                                <td class="py-4 text-gray-400 font-normal">maria@email.com</td>
+                                <td class="py-4">
+                                    <span
+                                        class="bg-blue-50 text-blue-600 text-[11px] font-bold px-2.5 py-1 rounded-full">
+                                        Líder de Jovens
+                                    </span>
+                                </td>
+                                <td class="py-4 text-right pr-4 space-x-4 text-xs font-bold">
+                                    <button class="text-blue-600 hover:underline">Promover</button>
+                                    <button class="text-red-500 hover:underline">Remover</button>
+                                </td>
+                            </tr>
+
+                            <!-- Linha 3: Carlos Souza -->
+                            <tr class="hover:bg-gray-50/50 transition">
+                                <td class="py-4 pl-2 flex items-center gap-3">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center font-extrabold text-xs shrink-0">
+                                        CS
+                                    </div>
+                                    <span class="font-bold text-gray-900">Carlos Souza</span>
+                                </td>
+                                <td class="py-4 text-gray-400 font-normal">carlos@email.com</td>
+                                <td class="py-4">
+                                    <span
+                                        class="bg-purple-50 text-purple-600 text-[11px] font-bold px-2.5 py-1 rounded-full">
+                                        Diácono
+                                    </span>
+                                </td>
+                                <td class="py-4 text-right pr-4 space-x-4 text-xs font-bold">
+                                    <button class="text-blue-600 hover:underline">Promover</button>
+                                    <button class="text-red-500 hover:underline">Remover</button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+
+</html>
