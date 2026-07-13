@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrFe - Login</title>
+    <link rel="stylesheet" href="../assets/css/global.css">
+</head>
+
+<body>
+    <main class="login-container">
+        <section class="login-card">
+            <h1>🏛️ OrFe</h1>
+            <p class="subtitle">Participe de eventos de igrejas</p>
+
+            <button class="btn-google" onclick="loginComGoogle()">
+                <img src="../assets/image/logotipo.png" alt="OrFe" class="google-icon">
+                Entrar com Google
+            </button>
+
+            <p class="terms">Ao entrar, você concorda com nossos termos de uso</p>
+            <p id="firebase-status" class="terms">Aguardando configuração do Firebase…</p>
+        </section>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+    <script src="../assets/js/firebase-client.js"></script>
+    <script src="../assets/js/auth.js"></script>
+</body>
+
+</html>

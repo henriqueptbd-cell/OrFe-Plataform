@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const helmet = require('helmet');
+const path = require('path');
 const dotenv = require('dotenv');
 const { initFirebase } = require('./config/firebase');
 
@@ -8,14 +8,24 @@ dotenv.config();
 initFirebase();
 
 const app = express();
-app.use(helmet());
+
+// Middlewares básicos
 app.use(cors());
 app.use(express.json());
 
-app.get('/health', (req, res) => res.json({ status: 'ok' }));
+// Servir frontend (HTML, CSS, JS)
+app.use(express.static(path.join(__dirname, '../../frontend/public')));
+
+// Rotas da API
+app.use('/api/auth', require('./routes/auth'));
+
+// Rota principal
+app.get('/', (req, res) => {
+	res.sendFile(path.join(__dirname, '../../frontend/public/pages/login.html'));
+});
 
 const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-	// eslint-disable-next-line no-console
-	console.log(`Server running on port ${PORT}`);
+	console.log(`🚀 OrFe rodando em http://localhost:${PORT}`);
 });
