@@ -9,17 +9,14 @@ initFirebase();
 
 const app = express();
 
-// Middlewares básicos
 app.use(cors());
 app.use(express.json());
 
-// Servir frontend (HTML, CSS, JS)
+// Serve TODA a pasta public (html, css, js, imagens) automaticamente
 app.use(express.static(path.join(__dirname, '../../frontend/public')));
 
-// Rotas da API
 app.use('/api/auth', require('./routes/auth'));
 
-// Rota principal
 app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname, '../../frontend/public/pages/login.html'));
 });
