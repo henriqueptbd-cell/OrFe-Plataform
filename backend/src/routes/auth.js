@@ -1,11 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const { admin, initFirebase } = require('../config/firebase');
+// Importa admin também para o serverTimestamp
+const { db, auth, admin } = require('../config/firebase');
 const { authMiddleware } = require('../middleware/auth');
-
-initFirebase();
-const db = admin.firestore();
-const auth = admin.auth();
 
 /**
  * POST /api/auth/login
@@ -13,13 +10,14 @@ const auth = admin.auth();
  */
 router.post('/login', async (req, res) => {
     try {
-        const { idToken } = req.body;
+        const { token, idToken } = req.body;
+        const receivedToken = token || idToken;
 
-        if (!idToken) {
+        if (!receivedToken) {
             return res.status(400).json({ erro: 'Token não fornecido' });
         }
 
-        const decodedToken = await auth.verifyIdToken(idToken);
+        const decodedToken = await auth.verifyIdToken(receivedToken);
         const { uid, email, name, picture } = decodedToken;
 
         const userRef = db.collection('usuarios').doc(uid);
@@ -28,7 +26,7 @@ router.post('/login', async (req, res) => {
         if (!userDoc.exists) {
             const newUser = {
                 nome: name || 'Sem nome',
-                email: email,
+                email: email || null,
                 google_id: uid,
                 foto_perfil: picture || null,
                 capa_perfil: null,

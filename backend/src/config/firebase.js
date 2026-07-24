@@ -30,4 +30,17 @@ function initFirebase() {
   return admin.app();
 }
 
-module.exports = { initFirebase, admin };
+// Inicializa o Firebase assim que o arquivo for importado
+initFirebase();
+
+// Cria instâncias prontas para serem usadas em qualquer lugar
+const db = admin.firestore();
+const auth = admin.auth();
+
+// Exporta TUDO que vamos precisar
+module.exports = {
+  initFirebase,  // mantido para caso queira chamar manualmente em algum lugar específico
+  admin,         // mantido para casos avançados
+  db,            // <-- NOVO: use isso para queries no Firestore
+  auth           // <-- NOVO: use isso para verificar tokens
+};
