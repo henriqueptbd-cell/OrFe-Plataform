@@ -19,16 +19,13 @@ router.post('/login', async (req, res) => {
             return res.status(400).json({ erro: 'Token não fornecido' });
         }
 
-        // Verificar token do Firebase
         const decodedToken = await auth.verifyIdToken(idToken);
         const { uid, email, name, picture } = decodedToken;
 
-        // Buscar usuário no Firestore
         const userRef = db.collection('usuarios').doc(uid);
         const userDoc = await userRef.get();
 
         if (!userDoc.exists) {
-            // Primeiro acesso: criar usuário
             const newUser = {
                 nome: name || 'Sem nome',
                 email: email,
@@ -45,18 +42,12 @@ router.post('/login', async (req, res) => {
 
             await userRef.set(newUser);
 
-            // Retornar usuário recém-criado
             return res.status(201).json({
-                usuario: {
-                    id: uid,
-                    ...newUser,
-                    criado_em: new Date()
-                },
+                usuario: { id: uid, ...newUser, criado_em: new Date() },
                 novo: true
             });
         }
 
-        // Usuário já existe: retornar dados
         const userData = userDoc.data();
 
         return res.json({
