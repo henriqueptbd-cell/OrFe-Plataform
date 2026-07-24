@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrFe — Criar Igreja</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#FFFDFB] text-[#1A1A1A] min-h-screen pb-16 pt-12">
+
+    <main class="max-w-2xl mx-auto px-6 space-y-8">
+
+        <!-- Cabeçalho -->
+        <div class="space-y-2">
+            <h1 class="text-3xl font-extrabold text-[#1A1A1A] tracking-tight">
+                Criar nova igreja
+            </h1>
+            <p class="text-sm text-gray-400 font-medium">
+                Cadastre sua comunidade para começar a gerenciar eventos e membros.
+            </p>
+        </div>
+
+        <!-- Formulário Principal -->
+        <form class="space-y-6" onsubmit="event.preventDefault();">
+
+            <!-- Upload de Imagens (Capa e Avatar) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Upload do Logo -->
+                <div
+                    class="border-2 border-dashed border-gray-200 rounded-[2rem] p-6 text-center hover:border-[#FF6B35] transition cursor-pointer bg-white">
+                    <span class="block text-2xl mb-1">🖼️</span>
+                    <span class="block text-sm font-bold text-gray-800">Foto do perfil</span>
+                    <span class="block text-xs text-gray-400 mt-0.5">Quadrada, min. 400x400px</span>
+                </div>
+                <!-- Upload da Capa -->
+                <div
+                    class="border-2 border-dashed border-gray-200 rounded-[2rem] p-6 text-center hover:border-[#FF6B35] transition cursor-pointer bg-white">
+                    <span class="block text-2xl mb-1">🌄</span>
+                    <span class="block text-sm font-bold text-gray-800">Foto de capa</span>
+                    <span class="block text-xs text-gray-400 mt-0.5">Recomendado 1200x400px</span>
+                </div>
+            </div>
+
+            <!-- Nome da Igreja -->
+            <div class="space-y-2">
+                <label class="block text-sm font-semibold text-gray-700">Nome da igreja *</label>
+                <input type="text" placeholder="Ex: Igreja Graça e Paz"
+                    class="w-full bg-white border border-gray-200 rounded-2xl px-4 py-3.5 outline-none focus:border-[#FF6B35] text-sm transition">
+            </div>
+
+            <!-- Descrição / Biografia -->
+            <div class="space-y-2">
+                <label class="block text-sm font-semibold text-gray-700">Sobre a igreja *</label>
+                <textarea rows="4" placeholder="Conte um pouco sobre a história, visão e comunidade da sua igreja..."
+                    class="w-full bg-white border border-gray-200 rounded-2xl px-4 py-3.5 outline-none focus:border-[#FF6B35] text-sm transition resize-none"></textarea>
+            </div>
+
+            <!-- Localização -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="sm:col-span-2 space-y-2">
+                    <label class="block text-sm font-semibold text-gray-700">Cidade *</label>
+                    <input type="text" placeholder="Ex: São Paulo"
+                        class="w-full bg-white border border-gray-200 rounded-2xl px-4 py-3.5 outline-none focus:border-[#FF6B35] text-sm transition">
+                </div>
+                <div class="space-y-2">
+                    <label class="block text-sm font-semibold text-gray-700">Estado *</label>
+                    <select
+                        class="w-full bg-white border border-gray-200 rounded-2xl px-4 py-3.5 outline-none focus:border-[#FF6B35] text-sm transition text-gray-500 font-medium">
+                        <option value="">Selecione</option>
+                        <option value="SP">São Paulo (SP)</option>
+                        <option value="RJ">Rio de Janeiro (RJ)</option>
+                        <option value="MG">Minas Gerais (MG)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Botões de Ação -->
+            <div class="flex items-center justify-end gap-4 pt-4">
+                <button type="button" class="text-gray-500 hover:text-gray-700 font-bold text-sm px-4 py-2 transition">
+                    Cancelar
+                </button>
+                <button type="submit"
+                    class="bg-[#FF6B35] text-white px-8 py-3.5 rounded-2xl font-bold text-sm hover:bg-[#e05a2b] transition shadow-md shadow-orange-100">
+                    Criar Igreja
+                </button>
+            </div>
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>

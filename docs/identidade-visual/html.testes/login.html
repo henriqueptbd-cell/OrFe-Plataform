@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrFe — Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght=400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#FFFDFB] text-[#1A1A1A] min-h-screen flex items-center justify-center p-4">
+
+    <!-- Card Central de Login -->
+    <main
+        class="w-full max-w-[480px] bg-white border border-gray-100 rounded-[2.5rem] shadow-sm p-8 sm:p-12 flex flex-col items-center text-center space-y-8">
+
+        <!-- Logo OrFe -->
+        <div class="flex flex-col items-center gap-3">
+            <div
+                class="w-14 h-14 bg-[#FF6B35] rounded-2xl flex items-center justify-center text-white text-2xl shadow-md shadow-orange-100">
+                🔥
+            </div>
+            <span class="text-3xl font-black tracking-tight text-[#1A1A1A]">OrFe</span>
+        </div>
+
+        <!-- Textos de Boas-vindas -->
+        <div class="space-y-2">
+            <h1 class="text-2xl font-black text-gray-950 tracking-tight">
+                Bem-vindo ao OrFe
+            </h1>
+            <p class="text-xs font-medium text-gray-400 max-w-[280px] mx-auto leading-relaxed">
+                Crie seu perfil e comece a participar de eventos de igrejas ao redor de você.
+            </p>
+        </div>
+
+        <!-- Ação Principal (Botão Google) -->
+        <div class="w-full space-y-3">
+            <button
+                class="w-full bg-white border border-gray-200 hover:border-gray-300 rounded-2xl py-3.5 px-4 flex items-center justify-center gap-3 font-bold text-sm text-gray-700 transition shadow-xs active:scale-[0.99]">
+                <!-- Ícone G do Google -->
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24">
+                    <path fill="#EA4335"
+                        d="M12.24 10.285V14.4h6.887c-.275 1.565-1.88 4.604-6.887 4.604-4.33 0-7.866-3.577-7.866-8s3.536-8 7.866-8c2.46 0 4.105 1.025 5.047 1.926l3.227-3.227C18.416 1.414 15.56 0 12.24 0 5.58 0 0 5.37 0 12s5.58 12 12.24 12c6.96 0 11.57-4.894 11.57-11.79 0-.795-.085-1.4-.195-1.925H12.24z" />
+                </svg>
+                Continuar com Google
+            </button>
+            <span class="block text-[10px] font-bold text-gray-300 tracking-wider uppercase">
+                nenhum cartão necessário
+            </span>
+        </div>
+
+        <!-- Grade de Benefícios / Recursos Inferiores -->
+        <div class="grid grid-cols-3 gap-2 w-full pt-2">
+            <!-- Item 1 -->
+            <div
+                class="bg-orange-50/40 border border-orange-100/20 p-3 rounded-2xl flex flex-col items-center justify-center gap-1.5">
+                <span class="text-base">🔍</span>
+                <span class="text-[10px] font-bold text-gray-700 leading-tight">Descubra eventos</span>
+            </div>
+            <!-- Item 2 -->
+            <div
+                class="bg-orange-50/40 border border-orange-100/20 p-3 rounded-2xl flex flex-col items-center justify-center gap-1.5">
+                <span class="text-base">👥</span>
+                <span class="text-[10px] font-bold text-gray-700 leading-tight">Conecte-se</span>
+            </div>
+            <!-- Item 3 -->
+            <div
+                class="bg-orange-50/40 border border-orange-100/20 p-3 rounded-2xl flex flex-col items-center justify-center gap-1.5">
+                <span class="text-base">⭐</span>
+                <span class="text-[10px] font-bold text-gray-700 leading-tight">Participe</span>
+            </div>
+        </div>
+
+        <!-- Rodapé de Consentimento Legais -->
+        <p class="text-[10px] font-medium text-gray-400 max-w-[280px] leading-relaxed">
+            Ao entrar, você concorda com os <a href="#" class="text-[#FF6B35] font-bold hover:underline">termos de
+                uso</a> e <a href="#" class="text-[#FF6B35] font-bold hover:underline">política de privacidade</a>.
+        </p>
+
+    </main>
+
+</body>
+
+</html>

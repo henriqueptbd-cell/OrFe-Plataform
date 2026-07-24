@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrFe — Retiro Espiritual de Verão</title>
+    <!-- Tailwind CSS para estilização idêntica ao protótipo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#FFFDFB] text-[#1A1A1A] min-h-screen pb-28">
+
+    <!-- Hero / Banner superior com imagem de fundo -->
+    <div class="relative h-64 md:h-80 w-full bg-gray-900">
+        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80"
+            alt="Retiro Espiritual" class="w-full h-full object-cover opacity-60">
+
+        <!-- Conteúdo flutuante sobre o Banner -->
+        <div class="absolute inset-0 max-w-5xl mx-auto px-4 flex flex-col justify-end pb-8 space-y-3">
+            <!-- Badge da Igreja Organizadora -->
+            <div
+                class="inline-flex items-center gap-2 bg-black/30 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-xs font-semibold w-max border border-white/10">
+                <span class="w-5 h-5 rounded-full bg-[#FF6B35] flex items-center justify-center text-[10px]">G</span>
+                Igreja Graça e Paz
+            </div>
+            <!-- Título do Evento -->
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-sm">
+                Retiro Espiritual de Verão
+            </h1>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal em Duas Colunas -->
+    <main class="max-w-5xl mx-auto px-4 pt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+        <!-- Coluna Esquerda: Informações e Formulário -->
+        <section class="lg:col-span-7 space-y-8">
+
+            <!-- Caixa de Informações Básicas (Data, Hora, Local) -->
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm space-y-4">
+                <div class="flex flex-wrap gap-y-4 gap-x-6 text-sm text-gray-600 font-medium">
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg">📅</span>
+                        <span>20 de Julho de 2026</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg">⏰</span>
+                        <span>08:00 às 18:00</span>
+                    </div>
+                    <div
+                        class="flex items-center gap-2 w-full pt-1 border-t border-gray-50 lg:border-none lg:pt-0 lg:w-auto">
+                        <span class="text-lg">📍</span>
+                        <span>Chácara Betel, Campinas — SP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Descrição do Evento -->
+            <div class="space-y-4 text-gray-600 leading-relaxed text-base">
+                <p>
+                    Um dia especial de renovação espiritual, comunhão e adoração coletiva. O retiro contará com momentos
+                    de louvor ao vivo, palestras com pastores convidados, grupos de oração e silêncio contemplativo.
+                </p>
+                <p>
+                    Vagas limitadas a 80 participantes. Transporte da sede às 07:30 e almoço inclusos. Traga roupas
+                    confortáveis e sua Bíblia.
+                </p>
+            </div>
+
+            <hr class="border-gray-100">
+
+            <!-- Formulário de Inscrição -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold text-[#1A1A1A]">Dados para inscrição</h3>
+
+                <form class="space-y-5" onsubmit="event.preventDefault();">
+                    <!-- Nome -->
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-gray-700">Nome completo *</label>
+                        <input type="text" placeholder="Seu nome"
+                            class="w-full bg-white border border-gray-200 rounded-2xl px-4 py-3.5 outline-none focus:border-[#FF6B35] text-sm transition">
+                    </div>
+
+                    <!-- Restrição Alimentar -->
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-gray-700">Restrição alimentar</label>
+                        <select
+                            class="w-full bg-white border border-gray-200 rounded-2xl px-4 py-3.5 outline-none focus:border-[#FF6B35] text-sm transition text-gray-600">
+                            <option>Nenhuma</option>
+                            <option>Vegetariano</option>
+                            <option>Vegano</option>
+                            <option>Sem glúten</option>
+                        </select>
+                    </div>
+
+                    <!-- Transporte -->
+                    <div class="space-y-3">
+                        <label class="block text-sm font-semibold text-gray-700">Precisa de transporte?</label>
+                        <div class="flex items-center gap-6 text-sm">
+                            <label class="flex items-center gap-2 cursor-pointer font-medium text-gray-700">
+                                <input type="radio" name="transporte" checked class="w-4 h-4 accent-[#FF6B35]"> Sim
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer font-medium text-gray-500">
+                                <input type="radio" name="transporte" class="w-4 h-4 accent-[#FF6B35]"> Não
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <hr class="border-gray-100">
+
+            <!-- Seção de Comentários -->
+            <div class="space-y-6">
+                <h3 class="text-xl font-bold text-[#1A1A1A]">Comentários ( 2 )</h3>
+
+                <!-- Lista de comentários -->
+                <div class="space-y-4">
+                    <!-- Comentário 1 -->
+                    <div class="bg-gray-50 p-4 rounded-2xl space-y-1">
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-7 h-7 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xs">
+                                MS</div>
+                            <span class="text-sm font-bold text-gray-800">Maria Santos</span>
+                            <span class="text-xs text-gray-400">· 2h</span>
+                        </div>
+                        <p class="text-sm text-gray-600 pl-9">Mal posso esperar! Esse retiro sempre é transformador.</p>
+                    </div>
+
+                    <!-- Comentário 2 -->
+                    <div class="bg-gray-50 p-4 rounded-2xl space-y-1">
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-7 h-7 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-xs">
+                                PL</div>
+                            <span class="text-sm font-bold text-gray-800">Pedro Lima</span>
+                            <span class="text-xs text-gray-400">· 5h</span>
+                        </div>
+                        <p class="text-sm text-gray-600 pl-9">Vou levar minha família este ano. Alguém mais vai de
+                            Campinas?</p>
+                    </div>
+                </div>
+
+                <!-- Campo Adicionar Comentário -->
+                <div class="flex gap-3 pt-2">
+                    <div
+                        class="w-8 h-8 rounded-full bg-[#FF6B35] text-white flex items-center justify-center font-bold text-xs shrink-0">
+                        JS</div>
+                    <div class="flex-1 flex gap-2">
+                        <input type="text" placeholder="Adicionar um comentário..."
+                            class="w-full bg-white border border-gray-200 rounded-2xl px-4 py-2 outline-none focus:border-[#FF6B35] text-sm transition">
+                        <button
+                            class="bg-gray-100 text-gray-700 px-4 py-2 rounded-2xl font-medium text-sm hover:bg-gray-200 transition">Enviar</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Coluna Direita: Caixa de Status da Inscrição e Organizador -->
+        <aside class="lg:col-span-5 space-y-6">
+
+            <!-- Box de Inscrição / Vagas -->
+            <div class="bg-white p-6 rounded-[2rem] border border-gray-100 shadow-md space-y-6 sticky top-6">
+                <!-- Contador de Vagas -->
+                <div class="grid grid-cols-2 gap-4 text-center">
+                    <div>
+                        <span class="block text-3xl font-extrabold text-gray-900">47</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">inscritos</span>
+                    </div>
+                    <div class="border-l border-gray-100">
+                        <span class="block text-3xl font-extrabold text-gray-300">80</span>
+                        <span class="text-xs font-semibold text-gray-400 uppercase tracking-wider">vagas</span>
+                    </div>
+                </div>
+
+                <!-- Barra de Progresso Visual das Vagas -->
+                <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+                    <div class="bg-[#FF6B35] h-full rounded-full" style="width: 58.7%"></div>
+                </div>
+
+                <!-- Botão de Inscrição Principal -->
+                <button
+                    class="w-full bg-[#FF6B35] text-white py-4 rounded-2xl font-bold text-base hover:bg-[#e05a2b] transition shadow-md shadow-orange-100">
+                    Inscrever-se
+                </button>
+
+                <!-- Botão Curtir -->
+                <button
+                    class="w-full border border-gray-200 py-3 rounded-2xl font-medium text-sm text-gray-500 hover:bg-gray-50 flex items-center justify-center gap-2 transition">
+                    <span>❤️</span> 47 curtidas
+                </button>
+
+                <!-- Divisor Interno -->
+                <hr class="border-gray-50">
+
+                <!-- Bloco Organizador -->
+                <div class="space-y-3">
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Organizado por</span>
+                    <div
+                        class="flex items-center justify-between p-3 rounded-2xl hover:bg-gray-50 cursor-pointer transition border border-gray-50">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-orange-100 text-[#FF6B35] font-extrabold flex items-center justify-center">
+                                G</div>
+                            <div>
+                                <h4 class="text-sm font-bold text-gray-900">Igreja Graça e Paz</h4>
+                                <p class="text-xs text-gray-400">São Paulo, SP</p>
+                            </div>
+                        </div>
+                        <span class="text-gray-400 text-sm">➔</span>
+                    </div>
+                </div>
+
+                <!-- Outros Eventos -->
+                <div class="space-y-3 pt-2">
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-wider block">Outros eventos desta
+                        igreja</span>
+                    <div class="bg-gray-50 p-4 rounded-2xl flex items-center justify-between gap-4">
+                        <div>
+                            <span class="text-[10px] font-bold text-purple-600 uppercase tracking-wider">AGO 24 ·
+                                19:00</span>
+                            <h5 class="text-sm font-bold text-gray-900 mt-0.5">Culto de Celebração</h5>
+                        </div>
+                        <span class="text-lg">⛪</span>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+    </main>
+
+
+</body>
+
+</html>
