@@ -28,6 +28,7 @@
 - [Banco de Dados](./tecnico/banco-de-dados.md) - Modelagem, coleções, relacionamentos
 - [Segurança e Performance](./tecnico/seguranca-e-perf.md) - Auth, RBAC, metas de performance
 - [Schemas](./tecnico/schemas.md) - Estrutura das coleções no Firestore
+- [Componentes Frontend](./tecnico/componentes-frontend.md) - Estratégia de desenvolvimento, padrões e exemplos
 
 ### 🎯 Funcionalidades
 
