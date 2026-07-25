@@ -1,88 +1,76 @@
-/* ===== RESET ===== */
+/* ============================================================
+   OrFe — global.css
+   Tokens de marca (cores, radius, fonte) + reset básico.
+   Fonte única de verdade pra qualquer valor visual repetido
+   entre páginas — evita hex/radius soltos no HTML.
+   ============================================================ */
+
+:root {
+    /* --- Cor primária da marca --- */
+    --color-primary: #FF6B35;
+    /* laranja OrFe — botões primários, links ativos, destaques */
+    --color-primary-hover: #e05a2b;
+    /* estado hover/pressed do laranja primário */
+    --color-primary-light: #FFF0EA;
+    /* fundo claro do laranja — usado em badges e banners de CTA */
+
+    /* --- Fundos e texto (neutros) --- */
+    --color-bg: #FFFDFB;
+    /* fundo padrão do produto — "quente", unificado em todas as telas */
+    --color-text: #1A1A1A;
+    /* texto principal (títulos e corpo de alta ênfase) */
+
+    /* --- Cinzas de apoio (texto secundário, bordas) --- */
+    --color-gray-400: #9CA3AF;
+    /* placeholders, legendas */
+    --color-gray-500: #6B7280;
+    /* texto secundário */
+    --color-gray-600: #4B5563;
+    /* texto secundário mais forte (ex: links de nav) */
+    --color-border: #F3F4F6;
+    /* bordas de card e divisores (gray-100) */
+
+    /* --- Radius — assinatura visual do OrFe (cantos bem arredondados) --- */
+    --radius-sm: 0.75rem;
+    /* equivalente ao rounded-xl — ícones pequenos, botões secundários */
+    --radius-md: 1rem;
+    /* equivalente ao rounded-2xl — botões primários, inputs */
+    --radius-lg: 1.5rem;
+    /* equivalente ao rounded-3xl — reservado pra imagens/mídia */
+    --radius-card: 2rem;
+    /* equivalente ao rounded-[2rem] — padrão oficial de card de conteúdo */
+
+    /* --- Sombras --- */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    /* card em repouso */
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    /* hover de card, botão primário */
+    --shadow-orange: 0 10px 15px -3px rgb(255 107 53 / 0.2);
+    /* sombra colorida do botão primário */
+
+    /* --- Tipografia --- */
+    --font-base: 'Inter', sans-serif;
+    /* fonte única do produto, pesos 400–900 */
+}
+
+/* --- Reset básico --- */
 * {
     margin: 0;
+    /* remove margens padrão do navegador em todos os elementos */
     padding: 0;
+    /* remove paddings padrão do navegador em todos os elementos */
     box-sizing: border-box;
+    /* padding e border passam a contar dentro da largura/altura definida */
 }
 
 body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background: #f0f2f5;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #1a1a1a;
+    font-family: var(--font-base);
+    /* aplica a fonte Inter em todo o body */
+    background: var(--color-bg);
+    /* fundo padrão do produto (creme) */
+    color: var(--color-text);
+    /* cor de texto padrão */
 }
 
-/* ===== LOGIN ===== */
-.login-container {
-    width: 100%;
-    max-width: 420px;
-    padding: 20px;
-}
-
-.login-card {
-    background: white;
-    border-radius: 20px;
-    padding: 48px 40px;
-    text-align: center;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
-}
-
-.login-card h1 {
-    font-size: 36px;
-    margin-bottom: 8px;
-}
-
-.login-card .subtitle {
-    color: #666;
-    font-size: 16px;
-    margin-bottom: 40px;
-}
-
-/* ===== BOTÃO GOOGLE ===== */
-.btn-google {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-    padding: 16px;
-    background: white;
-    border: 2px solid #e0e0e0;
-    border-radius: 14px;
-    font-size: 16px;
-    font-weight: 500;
-    color: #333;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.btn-google:hover {
-    border-color: #4a90d9;
-    background: #f5f8ff;
-}
-
-.btn-google .google-icon {
-    width: 22px;
-    height: 22px;
-}
-
-/* ===== TERMOS ===== */
-.terms {
-    margin-top: 28px;
-    font-size: 13px;
-    color: #999;
-}
-
-/* ===== RESPONSIVO ===== */
-@media (max-width: 480px) {
-    .login-card {
-        padding: 32px 24px;
-    }
-
-    .login-card h1 {
-        font-size: 28px;
-    }
-}
+/* --- Import da fonte Inter (sintaxe correta, com @ e não =) --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');

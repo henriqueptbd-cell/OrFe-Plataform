@@ -1,0 +1,75 @@
+/* assets/css/componentes/button.css
+   Sempre usa os tokens de global.css (var(--...)) — nunca hex direto aqui. */
+
+.btn {
+    display: inline-flex;
+    /* alinha texto/ícone no centro do botão */
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-base);
+    /* Inter, herdado do global.css */
+    font-weight: 600;
+    /* peso semibold pra destacar a ação */
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    /* remove sublinhado padrão quando renderiza como <a> */
+    white-space: nowrap;
+    /* evita o texto do botão quebrar linha */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* --- Variante primária: laranja da marca, usada em CTAs principais --- */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+    border-radius: 9999px;
+    /* pill — como "Criar perfil grátis" no index */
+    box-shadow: var(--shadow-orange);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* --- Variante secundária: cinza claro que vira laranja no hover --- */
+/* Usada nos botões "Participar" dos cards de evento */
+.btn-secondary {
+    background-color: #F3F4F6;
+    /* gray-100 do Tailwind — cor neutra, não é token de marca */
+    color: var(--color-text);
+    border-radius: var(--radius-sm);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+/* --- Variante ghost: sem fundo, só texto laranja --- */
+/* Usada em links terciários como "Entrar" e "Ver todos" */
+.btn-ghost {
+    background: transparent;
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.btn-ghost:hover {
+    text-decoration: underline;
+}
+
+/* --- Tamanhos --- */
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 14px;
+}
+
+.btn-md {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.btn-lg {
+    padding: 16px 32px;
+    font-size: 16px;
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrFe — Descubra e participe de eventos de igrejas</title>
+    <!-- Tailwind CSS via CDN para os utilitários de layout/spacing das seções não-componentizadas -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- global.css: tokens de marca (cores, radius, fonte) — carrega ANTES dos CSS de componente,
+         porque eles dependem das variáveis definidas aqui -->
+    <link rel="stylesheet" href="assets/css/global.css">
+
+    <!-- CSS de cada componente usado nesta página -->
+    <link rel="stylesheet" href="assets/css/componentes/button.css">
+    <link rel="stylesheet" href="assets/css/componentes/header.css">
+    <link rel="stylesheet" href="assets/css/componentes/card.css">
+    <link rel="stylesheet" href="assets/css/componentes/footer.css">
+</head>
+
+<body>
+
+    <!-- Header montado via JS (assets/js/componentes/Header.js) -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section (ainda não é componente — só aparece nesta página) -->
+    <section class="max-w-7xl mx-auto px-6 pt-12 pb-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+            <!-- Badge -->
+            <div
+                class="inline-flex items-center gap-2 bg-[var(--color-primary-light)] text-[var(--color-primary)] px-4 py-1.5 rounded-full text-sm font-semibold">
+                <span>🔥 Mais de 1.200 eventos cadastrados</span>
+            </div>
+
+            <!-- Título Principal -->
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-[var(--color-text)] leading-[1.15]">
+                Descubra eventos que <span class="text-[var(--color-primary)]">alimentam sua fé</span>
+            </h1>
+
+            <p class="text-lg text-gray-600 max-w-xl">
+                Encontre eventos de igrejas perto de você, inscreva-se e participe da sua comunidade.
+            </p>
+
+            <!-- Barra de Busca -->
+            <div class="pt-4 max-w-xl">
+                <div class="bg-white p-2 rounded-2xl border border-gray-100 shadow-xl flex items-center gap-2">
+                    <input type="text" placeholder="Buscar eventos ou igrejas..."
+                        class="w-full pl-4 bg-transparent outline-none text-gray-700 placeholder-gray-400">
+                    <button
+                        class="bg-[var(--color-primary)] text-white px-6 py-3 rounded-xl font-medium hover:bg-[var(--color-primary-hover)] transition whitespace-nowrap">
+                        Buscar
+                    </button>
+                </div>
+                <!-- Tags/Sugestões -->
+                <div class="flex flex-wrap gap-2 mt-4 text-sm text-gray-500">
+                    <span class="cursor-pointer hover:text-[var(--color-primary)]">Retiro Espiritual</span> ·
+                    <span class="cursor-pointer hover:text-[var(--color-primary)]">Noite de Louvor</span> ·
+                    <span class="cursor-pointer hover:text-[var(--color-primary)]">Acampamento Jovem</span> ·
+                    <span class="cursor-pointer hover:text-[var(--color-primary)]">Conferências</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid de Imagens do Hero -->
+        <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+            <div class="space-y-4">
+                <img src="https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&w=400&q=80"
+                    alt="Flores/Comunidade" class="w-full h-64 object-cover rounded-3xl shadow-md">
+                <img src="https://images.unsplash.com/photo-1438029071396-1e831a7fa6d8?auto=format&fit=crop&w=400&q=80"
+                    alt="Crianças/Família" class="w-full h-40 object-cover rounded-3xl shadow-md">
+            </div>
+            <div class="space-y-4 pt-8">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=400&q=80"
+                    alt="Microfone/Música" class="w-full h-40 object-cover rounded-3xl shadow-md">
+                <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=400&q=80"
+                    alt="Montanhas" class="w-full h-64 object-cover rounded-3xl shadow-md">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Eventos em Destaque -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="flex justify-between items-end mb-8">
+            <div>
+                <h2 class="text-3xl font-bold text-[var(--color-text)]">Eventos em destaque</h2>
+                <p class="text-gray-500 mt-1">Os eventos mais aguardados perto de você</p>
+            </div>
+            <a href="#" class="text-[var(--color-primary)] font-semibold hover:underline">Ver todos</a>
+        </div>
+
+        <!-- Os 3 cards de evento agora são montados via JS (EventCard.js), não hardcoded aqui -->
+        <div id="events-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+    </section>
+
+    <!-- Seção: Igrejas na Plataforma (ainda não é componente — só aparece nesta página) -->
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="mb-8">
+            <h2 class="text-3xl font-bold text-[var(--color-text)]">Igrejas na plataforma</h2>
+            <p class="text-gray-500 mt-1">Siga igrejas e fique por dentro dos eventos</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition space-y-4">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-orange-100 text-[var(--color-primary)] flex items-center justify-center font-bold text-xl">
+                    I</div>
+                <div>
+                    <h3 class="font-bold text-lg text-[var(--color-text)]">Igreja Graça e Paz</h3>
+                    <p class="text-sm text-gray-500 mt-1 line-clamp-2">Comunidade evangélica há 20 anos servindo São
+                        Paulo.</p>
+                </div>
+                <div class="text-xs font-medium text-gray-400 flex gap-3 pt-2">
+                    <span>👥 348 membros</span>
+                    <span>📅 12 eventos</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition space-y-4">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-xl">
+                    C</div>
+                <div>
+                    <h3 class="font-bold text-lg text-[var(--color-text)]">Comunidade Nova Vida</h3>
+                    <p class="text-sm text-gray-500 mt-1 line-clamp-2">Jovens transformando a cidade com amor e
+                        propósito.</p>
+                </div>
+                <div class="text-xs font-medium text-gray-400 flex gap-3 pt-2">
+                    <span>👥 512 membros</span>
+                    <span>📅 18 eventos</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition space-y-4">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-xl">
+                    I</div>
+                <div>
+                    <h3 class="font-bold text-lg text-[var(--color-text)]">Igreja Renovar</h3>
+                    <p class="text-sm text-gray-500 mt-1 line-clamp-2">Fé em ação, servindo a comunidade local com
+                        excelência.</p>
+                </div>
+                <div class="text-xs font-medium text-gray-400 flex gap-3 pt-2">
+                    <span>👥 211 membros</span>
+                    <span>📅 8 eventos</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition space-y-4">
+                <div
+                    class="w-12 h-12 rounded-2xl bg-green-100 text-green-600 flex items-center justify-center font-bold text-xl">
+                    I</div>
+                <div>
+                    <h3 class="font-bold text-lg text-[var(--color-text)]">Igreja Palavra Viva</h3>
+                    <p class="text-sm text-gray-500 mt-1 line-clamp-2">Ensino bíblico sólido e comunhão genuína.</p>
+                </div>
+                <div class="text-xs font-medium text-gray-400 flex gap-3 pt-2">
+                    <span>👥 178 membros</span>
+                    <span>📅 6 eventos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner CTA Final -->
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <div
+            class="bg-[var(--color-primary-light)] rounded-[var(--radius-card)] p-8 md:p-12 text-center space-y-6 max-w-4xl mx-auto shadow-inner">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-[var(--color-text)]">
+                Crie seu perfil grátis
+            </h2>
+            <p class="text-gray-600 max-w-md mx-auto">
+                e comece a participar de eventos de igrejas agora mesmo.
+            </p>
+            <!-- Botão da CTA final também vem do componente Button, montado via JS -->
+            <div class="pt-2 flex justify-center" id="cta-button-container"></div>
+        </div>
+    </section>
+
+    <!-- Footer montado via JS (assets/js/componentes/Footer.js) -->
+    <div id="footer-container"></div>
+
+    <!-- Componentes carregam ANTES do index.js, porque index.js usa OrFeComponents.* -->
+    <script src="assets/js/componentes/Button.js"></script>
+    <script src="assets/js/componentes/Header.js"></script>
+    <script src="assets/js/componentes/EventCard.js"></script>
+    <script src="assets/js/componentes/Footer.js"></script>
+
+    <!-- Orquestrador desta página: monta Header, EventCards e Footer nos containers acima -->
+    <script src="assets/js/index.js"></script>
+    <script>
+        // Botão da CTA final — montado aqui por ser específico desta seção (não faz parte do index.js "geral")
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('cta-button-container').appendChild(
+                OrFeComponents.Button({ text: 'Criar meu perfil — é grátis', type: 'primary', size: 'lg', href: '#' })
+            );
+        });
+    </script>
+
+</body>
+
+</html>
