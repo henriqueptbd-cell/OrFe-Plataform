@@ -55,7 +55,7 @@
 
 ### H005 - Estrutura Frontend
 
-- [ ] Criar `index.html` (página pública)
+- [✅] Criar `index.html` (página pública)
 - [ ] Criar `admin.html` (painel)
 - [ ] Criar `login.html`
 - [ ] Configurar CSS base (variáveis, reset)
