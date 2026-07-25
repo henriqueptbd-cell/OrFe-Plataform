@@ -30,17 +30,19 @@ function initFirebase() {
   return admin.app();
 }
 
-// Inicializa o Firebase assim que o arquivo for importado
-initFirebase();
+// REMOVIDO: initFirebase() automático aqui.
+// Agora a inicialização só acontece quando initFirebase() for chamado
+// explicitamente (no server.js, depois do dotenv.config()).
 
-// Cria instâncias prontas para serem usadas em qualquer lugar
-const db = admin.firestore();
-const auth = admin.auth();
 
 // Exporta TUDO que vamos precisar
 module.exports = {
   initFirebase,  // mantido para caso queira chamar manualmente em algum lugar específico
   admin,         // mantido para casos avançados
-  db,            // <-- NOVO: use isso para queries no Firestore
-  auth           // <-- NOVO: use isso para verificar tokens
+  get db() {     // <-- agora só executa admin.firestore() quando alguém usar '.db'
+    return admin.firestore();
+  },
+  get auth() {   // <-- mesma ideia para auth
+    return admin.auth();
+  }
 };
