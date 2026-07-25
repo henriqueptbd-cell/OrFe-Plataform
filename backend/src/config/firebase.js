@@ -30,4 +30,19 @@ function initFirebase() {
   return admin.app();
 }
 
-module.exports = { initFirebase, admin };
+// REMOVIDO: initFirebase() automático aqui.
+// Agora a inicialização só acontece quando initFirebase() for chamado
+// explicitamente (no server.js, depois do dotenv.config()).
+
+
+// Exporta TUDO que vamos precisar
+module.exports = {
+  initFirebase,  // mantido para caso queira chamar manualmente em algum lugar específico
+  admin,         // mantido para casos avançados
+  get db() {     // <-- agora só executa admin.firestore() quando alguém usar '.db'
+    return admin.firestore();
+  },
+  get auth() {   // <-- mesma ideia para auth
+    return admin.auth();
+  }
+};

@@ -42,16 +42,16 @@
 
 - [✅] Configurar Firebase Auth no console
 - [✅] Habilitar Google OAuth
-- [ ] Criar endpoint `/api/auth/login`
-- [ ] Criar middleware de verificação de token
-- [ ] Testar fluxo completo
+- [✅] Criar endpoint `/api/auth/login`
+- [✅] Criar middleware de verificação de token
+- [✅] Testar fluxo completo
 
 ### H004 - Middleware Tenant
 
-- [ ] Criar `tenantMiddleware.js`
-- [ ] Validar `igreja_id` nas requisições
-- [ ] Tratar super_admin (acesso global)
-- [ ] Testar isolamento
+- [✅] Criar `tenantMiddleware.js`
+- [✅] Validar `igreja_id` nas requisições
+- [✅] Tratar super_admin (acesso global)
+- [✅] Testar isolamento
 
 ### H005 - Estrutura Frontend
 
